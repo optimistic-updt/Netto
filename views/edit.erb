@@ -1,15 +1,15 @@
 
 <form action="/card" method="post">
-<input type="hidden" type="_method" value="patch">
-<input type="hidden" type="text" value="<%= card["id"] %>">
+<input type="hidden" name="_method" value="patch">
+<input type="hidden" type="text" name="id" value="<%= card["id"] %>">
 
     <div class="card card-solo">
         <p><input type="text" class="user-input" name="quality" value="<%= card["quality"] %>"></p>
 
         <img src="<%= card["image"] %>" alt="<%= card["name"] %>'s profile picture">
-        <input type="file" name="" id="">
+        <input type="url" name="image" class="user-input" value="<%= card["image"] %>">
         or
-        <input type="url" name="" class="user-input" value="image url">
+        <input type="file" name="" id="">
         
         <h4>Name <input type="text" class="user-input" name="name" value="<%= card["name"] %>"></h4>
 

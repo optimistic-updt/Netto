@@ -1,0 +1,16 @@
+<a href="/index">Back to main screen</a>
+<a href="/show/<%= card['id']%>">Back to the card</a>
+
+<h4>Are you sure you want to delete <%= card["name"]%> ?</h4>
+
+<div class="card card-solo">
+    <img src="<%= card["image"] %>" alt="<%= card["name"] %>'s profile picture">
+    <h4><%= card["name"] %></h4>
+    <p>Met at <%= card["met"] %></p>
+     
+    <form action="/card" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="hidden" name="id" value="<%= card["id"] %>">
+        <input type="submit" class="btn delete-btn" value="DELETE">
+    </form>
+</div>

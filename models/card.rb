@@ -15,11 +15,11 @@ def get_card_by_id(id)
 end
 
 def edit_card(id, name, image, workplace, job, met, relationship, skills, quality, notes)
-    run_sql("UPDATE cards SET name=$1, image=$2, workplace=$3, job=$4, met=$5, relationship=$6, skills=$7, quality=$8, notes=$10 WHERE id=$11;",[
+    run_sql("UPDATE cards SET name=$1, image=$2, workplace=$3, job=$4, met=$5, relationship=$6, skills=$7, quality=$8, notes=$9 WHERE id=$10;",[
         name, image, workplace, job, met, relationship, skills, quality, notes, id
     ])
 end
 
-def delete_cards(id)
+def delete_card(id)
     run_sql("DELETE FROM cards WHERE id = $1;",[ id ])
 end

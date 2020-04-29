@@ -1,12 +1,12 @@
 <p>logged in as <%= user["email"] %></p>
 
-<form action="/user/logout" method="post">
-  <input type="hidden" type="_method" value="delete">
+<form action="/session" method="post">
+  <input type="hidden" name="_method" value="delete">
   <button class="btn">log out</button>
 </form>
 
 <a href="#"><button class="btn">Seach</button></a>
-<a href="#"><button class="btn">Add</button></a>
+<a href="/card/new"><button class="btn">Add</button></a>
 <a href="#"><button class="btn">View Map</button></a>
 
 <div class="main-grid">
@@ -19,7 +19,6 @@
                 <h4><%= card["name"] %></h4>
 
                 <a href="/card/<%= card["id"] %>/edit"><button class="btn">Update</button></a>
-                <%# <a href="/delete"><button class="btn">Delete</button></a> %>
             </div>
         </a>
     <% end %>
