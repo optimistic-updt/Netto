@@ -13,7 +13,7 @@ end
 
 
 get '/user/new' do
-  erb :user_new
+  erb :'/user/user_new'
 end
 
 
@@ -25,12 +25,11 @@ end
 
 
 get '/user/login' do
-  erb :user_login
+  erb :'/user/user_login'
 end
 
 
 post '/user/login' do
-  # find and match the user
   user = get_user_by_email(params[:email])
 
   if user && BCrypt::Password.new(user["pw_digest"]) == params[:pw]
@@ -52,7 +51,7 @@ get '/index' do
   user = get_user_by_id(session[:user_id])
   cards = all_cards_for_user(user["id"])
 
-  erb :index, locals: {
+  erb :'cards/index', locals: {
     user: user,
     cards: cards
   }
@@ -61,16 +60,22 @@ end
 
 get '/show/:id' do
   card = get_card_by_id(params[:id])
-  erb :show, locals: {
-    card: card
+  user = get_user_by_id(session[:user_id])
+
+  erb :'/cards/show', locals: {
+    card: card,
+    user: user
   }
 end
 
 
 get '/card/:id/edit' do
   card = get_card_by_id(params[:id])
-  erb :edit, locals: {
-    card: card
+  user = get_user_by_id(session[:user_id])
+
+  erb :'/cards/edit', locals: {
+    card: card,
+    user: user
   }
 end
 
@@ -93,7 +98,11 @@ end
 
 
 get '/card/new' do
-  erb :new
+  user = get_user_by_id(session[:user_id])
+
+  erb :'cards/new', locals: {
+    user: user
+  }
 end
 
 
@@ -117,8 +126,11 @@ end
 
 get '/card/:id/delete' do
   card = get_card_by_id(params[:id])
-  erb :delete, locals: {
-    card: card
+  user = get_user_by_id(session[:user_id])
+
+  erb :'cards/delete', locals: {
+    card: card,
+    user: user
   }
 end
 
@@ -126,4 +138,16 @@ end
 delete '/card' do
   delete_card(params[:id])
   redirect "/index"
+end
+
+
+get '/search' do
+  results = search(params[:search])
+  user = get_user_by_id(session[:user_id])
+
+
+  erb :'/cards/search_results', locals: {
+    results: results,
+    user: user
+  } 
 end
