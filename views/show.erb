@@ -1,0 +1,18 @@
+<a href="/index">Back to main screen</a>
+
+<div class="card card-solo">
+    <p><%= card["quality"] %></p>
+
+    <img src="<%= card["image"] %>" alt="<%= card["name"] %>'s profile picture">
+
+    <h4><%= card["name"] %></h4>
+
+    <p><%= card["met"] %></p>
+    <p><%= card["workplace"] %></p>
+    <p><%= card["skills"] %></p>
+
+    <div class="note"><%= card["notes"] %></div>
+
+    <a href="/card/<%= card["id"] %>/edit"><button class="btn">Update</button></a>
+    <a href="/delete"><button class="btn">Delete</button></a>
+</div>

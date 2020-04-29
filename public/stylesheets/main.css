@@ -1,3 +1,7 @@
+/* ------------------------------ */
+/* ----- SETUP ----------- */
+/* ------------------------------ */
+
 .dark-primary-color    { background: #303F9F; }
 .default-primary-color { background: #3F51B5; }
 .light-primary-color   { background: #C5CAE9; }
@@ -15,11 +19,14 @@ html {
 body {
     font-family: 'Work Sans', sans-serif;
     background-color: #303F9F;
-    
     box-sizing: border-box;
 }
 
-form {
+/* ------------------------------ */
+/* ----- FORM STYLING ----------- */
+/* ------------------------------ */
+
+.form {
     background-color: #C5CAE9;
     display: grid;
     grid-template-columns: 1fr;
@@ -29,7 +36,6 @@ form {
     margin: 0 auto;
     border-radius: 50px;
     justify-items: center;
-
 }
 
 .form--header {
@@ -41,12 +47,12 @@ form {
     align-self: end;
 }
 
-input:first-child {
+.user-input:first-child {
     border-bottom: 1px solid #BDBDBD;
     border-radius: 5px 5px 0 0;
 }
 
-input {
+.user-input {
     color: rgb(155, 155, 155);
     display: block;
     padding: 10px;
@@ -54,7 +60,7 @@ input {
     border-radius: 0 0 5px 5px;
 }
 
-.form-btn {
+.btn {
     background-color: #FF9800;
     width: fit-content;
     height: fit-content;
@@ -64,6 +70,49 @@ input {
     margin-top: 30px;
 }
 
+/* .form-btn {
+    background-color: #FF9800;
+    width: fit-content;
+    height: fit-content;
+    font-size: 14px;
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 30px;
+} */
+
 h2 {
     font-size: 2rem;
+}
+
+/* ------------------------------ */
+/* ----- CARD STYLING ----------- */
+/* ------------------------------ */
+
+.card {
+    margin: 20px;
+    background-color: #FF9800;
+    border-radius: 30px;
+    display: grid;
+    justify-items: center;
+    box-shadow: 0px 15px 16px 15px #303030;
+    border: 10px solid #000000;
+    padding: 50px;
+}
+
+.card img {
+    border-radius: 30%;
+}
+
+.card p {
+    border: 1px solid black;
+}
+
+
+
+/* ====================== */
+
+.main-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    
 }

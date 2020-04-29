@@ -24,6 +24,11 @@ end
 
 
 def get_user_by_email(email)
-    user = run_sql("SELECT * FROM users WHERE email = $1;",[ email ])[0]
-    user
+    user = run_sql("SELECT * FROM users WHERE email = $1;",[ email ])
+
+    if user.count == 0
+        nil
+    else
+        user[0]
+    end
 end
