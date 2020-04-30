@@ -1,10 +1,13 @@
 
-    <form class="form" action="/user" method="post">
-        <h2 class="form--header">Sign up</h2>
-        <div class="input-fields">
-            <input type="email" name="email" value="email" class="user-input">
-            <input type="password" name="pw" value="password" class="user-input">
-        </div>
-
-        <button class="btn form-btn">Sign up</button>
-    </form>
+<form class="form form-user" action="/user" method="post">
+    <h3 class="form--header">Sign Up</h3>
+    
+    <input type="email" name="email" value="Email" class="user-input form-user--input">
+    <input type="password" name="pw" value="password" class="user-input">
+    <input type="submit" class="form-btn sign-in-btn" value="Sign Up">
+    <%# <input type="checkbox" id="Remember me" name="remember" value="Remember me"> %>
+    <p class="or">or</p>
+    <button class="form-btn">Sign Up with Google</button>
+    <button class="form-btn facebook-btn">Sign In with Facebook</button>
+    <a href="/" class="form-user--home">Return Home</a>
+</form>

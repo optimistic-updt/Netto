@@ -31,3 +31,6 @@ Day 2 was based around achieving a MVC which was completed just before 5pm
 
 
 Day 3 Styling
+
+
+"Icon made by Pixel perfect from www.flaticon.com"

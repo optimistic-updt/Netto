@@ -12,21 +12,20 @@
 </head>
 <body>
 <header class="navigation">
-
     <% if session[:user_id] != nil  %>
 
       <p>logged in as <%= user["email"] %></p>
       <form action="/session" method="post">
         <input type="hidden" name="_method" value="delete">
         <button class="btn">log out</button>
-      </form>   
-
+      </form>  
     <% end %>
-
 </header>
 
 
   <%= yield %>
 
+
+<script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
 </body>
 </html>

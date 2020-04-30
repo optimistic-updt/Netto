@@ -1,19 +1,13 @@
-   
-   
-   
-<form class="form" action="/user/login" method="post">
-    <h2 class="form--header">login</h2>
-
-    <div class="input-fields">
-        <input type="email" name="email" value="email" class="user-input">
-        <input type="password" name="pw" value="password" class="user-input">
-    </div>
-
-    <button class="btn form-btn">Log In</button>
-    <input type="checkbox" id="" name="remember" value="true">
-    OR
-    <button>Log in with Google</button>
-    <button>Log in with Facebook</button>
-
-    <caption>forgot your password</caption>
+<form class="form form-user" action="/user/login" method="post">
+    <h3 class="form--header">Sign In</h3>
+    <p>Don't have an account? <a href="/user/new">Sign Up</a></p>
+    
+    <input type="email" name="email" value="Email" class="user-input form-user--input">
+    <input type="password" name="pw" value="password" class="user-input">
+    <input type="submit" class="form-btn sign-in-btn" value="Sign In">
+    <%# <input type="checkbox" id="Remember me" name="remember" value="Remember me"> %>
+    <a href="#" class="form-user--forgot">Forgot your password?</a>
+    <p class="or">or</p>
+    <button class="form-btn">Log in with Google</button>
+    <button class="form-btn facebook-btn">Log in with Facebook</button>
 </form>
