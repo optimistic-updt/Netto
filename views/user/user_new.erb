@@ -2,8 +2,8 @@
 <form class="form form-user" action="/user" method="post">
     <h3 class="form--header">Sign Up</h3>
     
-    <input type="email" name="email" value="Email" class="user-input form-user--input">
-    <input type="password" name="pw" value="password" class="user-input">
+    <input type="email" name="email" placeholder="me@superawesome.com" class="user-input form-user--input" required>
+    <input type="password" name="pw" placeholder="password" class="user-input" minLength="8" required>
     <input type="submit" class="form-btn sign-in-btn" value="Sign Up">
     <%# <input type="checkbox" id="Remember me" name="remember" value="Remember me"> %>
     <p class="or">or</p>

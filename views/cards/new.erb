@@ -1,23 +1,35 @@
 
-<form  class="form card card-solo"  action="/card" method="post">
+<form  class="card card-solo"  action="/card" method="post">
 
-    <%# <div class="card card-solo"> %>
+    <div class="image-placeholder"></div>
 
-        <div class="image-placeholder"></div>
-        <p><input type="text" class="user-input" name="quality" value="quality"></p>
+    <section class="card-solo--files">
+        <input type="url" name="image" class="user-input image-url-input" value="">
+        <p class="or card-solo--or">or</p>
+        <input type="file" class="file-input" name="" id="">    
+    </section>
 
-        <img src="" alt="">
-        <input type="url" name="image" class="user-input" value="image url">
-        or
-        <input type="file" name="" id="">
+    <section class="card-solo--input-section">
         
-        <h4>Name <input type="text" class="user-input" name="name" value="name"></h4>
+        <h4 class="left-col">Name</h4>
+        <input type="text" class="user-input" name="name" value="name">
+        
+        <p class="left-col">Met at</p><input type="text" class="user-input"  name="met" value="school, work, etc...">
 
-        <p>Met at<input type="text" class="user-input"  name="met" value="met"></p>
-        <p>Works at<input type="text" class="user-input" name="workplace" value="workplace"></p>
-        <p>skills<input type="text" class="user-input" name="skills" value="skills"></p>
+        <p class="left-col">Knows</p><input type="text" class="user-input" name="source" value="who?">
 
-        <p>Notes<input type="text" class="user-input" name="notes" value="notes"></p>
+        <p class="left-col">Works at</p><input type="text" class="user-input" name="workplace" value="Uber">
+
+        <p class="left-col">Skills</p><input type="text" class="user-input" name="skills" value="tech skills, others...">
+        
+        <p class="left-col">Key Trait</p><input type="text" class="user-input" name="quality" value="Doer, Clever">
+
+        <p class="left-col">Notes</p>
+        <textarea name="notes" id="" cols="30" rows="5"></textarea>
+
+        <%# <input type="text" class="user-input notes" name="notes" value=""> %>
+        
+    </section>
 
         <input type="submit" class="btn" value="Create New">
         <input type="reset" class="btn" value="reset">

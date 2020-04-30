@@ -1,24 +1,32 @@
 
 
-<a href="/card/new"><button class="btn">Add</button></a>
-<a href="#"><button class="btn">View Map</button></a>
 
-<form action="/search" method="get">
-    <input type="search" class="user-input" name="search" id="search">
-    <input type="submit" class="btn" value="Search">
-</form>
+<section class="top-of-search">
+    
+    <form action="/search" method="get" class="search-form align-class">
+        <input type="search" class="user-input search--input" name="search" id="search" placeholder="Search...">
+        <input type="submit" class="btn search--btn" value="Search"> 
+    </form>
+    <a href="/card/new" class="search-add-btn"><button class="btn">Add</button></a>
+    
+</section>
+
 
 <div class="main-grid">
-    <% results.each do |card| %>
-        <a href="/show/<%= card["id"] %>">
-            <div class="card card-multiple">
 
+    <% results.each do |card| %>
+
+
+            <div class="card card-multiple">
+            <a href="/show/<%= card["id"]%>" class="card--a">
                 <img src="<%= card["image"] %>" alt="<%= card["name"] %>'s profile picture">
 
-                <h4><%= card["name"] %></h4>
+                <h4><%= card["name"].split(/ |\_|\-/).map(&:capitalize).join(" ") %></h4>
 
-                <a href="/card/<%= card["id"] %>/edit"><button class="btn">Update</button></a>
+                <a href="/card/<%= card["id"] %>/edit"><button class="btn card--btn">Update</button></a>
+            </a>
             </div>
-        </a>
     <% end %>
 </div>
+
+

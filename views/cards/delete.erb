@@ -1,5 +1,3 @@
-<a href="/index">Back to main screen</a>
-<a href="/show/<%= card['id']%>">Back to the card</a>
 
 <h4>Are you sure you want to delete <%= card["name"]%> ?</h4>
 
@@ -8,6 +6,9 @@
     <h4><%= card["name"] %></h4>
     <p>Met at <%= card["met"] %></p>
      
+
+    <a href="/show/<%= card['id']%>"><button class="btn">Back to the card</button></a>
+
     <form action="/card" method="post">
         <input type="hidden" name="_method" value="delete">
         <input type="hidden" name="id" value="<%= card["id"] %>">

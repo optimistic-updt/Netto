@@ -1,18 +1,49 @@
-<a href="/index">Back to main screen</a>
 
 <div class="card card-solo">
     <p><%= card["quality"] %></p>
 
     <img src="<%= card["image"] %>" alt="<%= card["name"] %>'s profile picture">
 
-    <h4><%= card["name"] %></h4>
+    <section class="card-solo--input-section">
+        
+        <h4 class="left-col">Name:</h4>
+        <h4><%= card["name"].split(/ |\_|\-/).map(&:capitalize).join(" ") %></h4>
+        
+        <p class="left-col">Met at</p><p><%= card["met"] %></p>
 
-    <p><%= card["met"] %></p>
-    <p><%= card["workplace"] %></p>
-    <p><%= card["skills"] %></p>
+        <p class="left-col">Knows</p><p><%= get_card_by_id(card["source"])["name"] %></p>
 
-    <div class="note"><%= card["notes"] %></div>
+        <p class="left-col">Works at</p>
+        <p><%= card["workplace"] %></p>
+
+        <p class="left-col">Skills</p>
+        <p><%= card["skills"] %></p>
+        
+        <p class="left-col">Key Trait</p>
+        <p><%= card["quality"] %></p>
+
+        <p class="left-col">Notes</p>
+        <textarea name="notes" id="" cols="30" rows="5"><%= card["notes"] %></textarea>
+        <%# <input type="text" class="user-input notes" name="notes" value=""> %>
+    </section>
 
     <a href="/card/<%= card["id"] %>/edit"><button class="btn">Update</button></a>
     <a href="/card/<%= card["id"] %>/delete"><button class="btn">Delete</button></a>
+</div>
+
+<div class="main-grid">
+    <% dependants.each do |dep| %>
+    
+        
+        <div class="card card-multiple">
+        <a href="/show/<%= dep["id"]%>" class="card--a">
+            <img src="<%= dep["image"] %>" alt="<%= dep["name"] %>'s profile picture">
+
+            <h4><%= dep["name"] %></h4>
+
+            <a href="/card/<%= dep["id"] %>/edit"><button class="btn card--btn">Update</button></a>
+        </a>
+        </div>
+        
+    <% end %>
 </div>

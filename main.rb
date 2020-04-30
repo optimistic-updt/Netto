@@ -49,22 +49,30 @@ end
 
 get '/index' do
   user = get_user_by_id(session[:user_id])
+
+  if user == nil
+    redirect '/'
+  else
   cards = all_cards_for_user(user["id"])
 
   erb :'cards/index', locals: {
     user: user,
     cards: cards
   }
+  end
 end
 
 
 get '/show/:id' do
   card = get_card_by_id(params[:id])
   user = get_user_by_id(session[:user_id])
+  dependants = get_dependant(params[:id])
+  
 
   erb :'/cards/show', locals: {
     card: card,
-    user: user
+    user: user,
+    dependants: dependants
   }
 end
 
@@ -87,7 +95,7 @@ patch '/card' do
     params[:workplace],
     params[:job],
     params[:met],
-    params[:relationship],
+    params[:source],
     params[:skills],
     params[:quality],
     params[:notes],
@@ -113,7 +121,7 @@ post'/card' do
     params[:workplace],
     params[:job],
     params[:met],
-    params[:relationship],
+    params[:source],
     params[:skills],
     params[:quality],
     params[:notes],
@@ -148,6 +156,7 @@ get '/search' do
 
   erb :'/cards/search_results', locals: {
     results: results,
-    user: user
+    user: user,
+    search_term: params[:search]
   } 
 end

@@ -7,7 +7,7 @@ CREATE TABLE cards (
     workplace TEXT,
     job TEXT,
     met TEXT,
-    relationship TEXT,
+    source TEXT,
     skills TEXT,
     quality TEXT,
     notes TEXT,

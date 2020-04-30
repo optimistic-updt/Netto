@@ -18,8 +18,13 @@ end
 
 
 def get_user_by_id(id)
-    user = run_sql("SELECT * FROM users WHERE id = $1;",[ id ])[0]
-    user
+    user = run_sql("SELECT * FROM users WHERE id = $1;",[ id ])
+
+    if user.count == 0
+        nil
+    else
+        user[0]
+    end
 end
 
 

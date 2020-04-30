@@ -5,7 +5,7 @@
 
 
 <form action="/search" method="get" class="search-form">
-    <input type="search" class="user-input search--input" name="search" id="search" value="Search...">
+    <input type="search" class="user-input search--input" name="search" id="search" placeholder="Search...">
     <input type="submit" class="btn search--btn" value="Search">
 </form>
 
@@ -16,10 +16,10 @@
     
         
             <div class="card card-multiple">
-            <a href="#" class="card--a">
+            <a href="/show/<%= card["id"]%>" class="card--a">
                 <img src="<%= card["image"] %>" alt="<%= card["name"] %>'s profile picture">
 
-                <h4><%= card["name"] %></h4>
+                <h4><%= card["name"].split(/ |\_|\-/).map(&:capitalize).join(" ") %></h4>
 
                 <a href="/card/<%= card["id"] %>/edit"><button class="btn card--btn">Update</button></a>
             </a>
