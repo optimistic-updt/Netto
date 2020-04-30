@@ -1,28 +1,39 @@
 
-<form action="/card" method="post">
+<form class="card card-solo" action="/card" method="post">
 <input type="hidden" name="_method" value="patch">
 <input type="hidden" type="text" name="id" value="<%= card["id"] %>">
 
-    <div class="card card-solo">
-        <p><input type="text" class="user-input" name="quality" value="<%= card["quality"] %>"></p>
+    <img src="<%= card["image"] %>" alt="<%= card["name"] %>'s profile picture">
+    
+    <section class="card-solo--files">
+        <input type="url" name="image" class="user-input image-url-input" value="<%= card["image"] %>">
+        <p class="or card-solo--or">or</p>
+        <input type="file" class="file-input" name="" id="">    
+    </section>
 
-        <img src="<%= card["image"] %>" alt="<%= card["name"] %>'s profile picture">
-        <input type="url" name="image" class="user-input" value="<%= card["image"] %>">
-        or
-        <input type="file" name="" id="">
+    <section class="card-solo--input-section">
         
-        <h4>Name <input type="text" class="user-input" name="name" value="<%= card["name"] %>"></h4>
+        <h4>Name </h4>
+        <input type="text" class="user-input" name="name" value="<%= card["name"] %>">
+        
+        <p>Met at</p><input type="text" class="user-input"  name="met" value="<%= card["met"] %>">
 
-        <p>Met at<input type="text" class="user-input"  name="met" value="<%= card["met"] %>"></p>
-        <p>Works at<input type="text" class="user-input" name="workplace" value="<%= card["workplace"] %>"></p>
-        <p>skills<input type="text" class="user-input" name="skills" value="<%= card["skills"] %>"></p>
+        <p>Knows</p><input type="text" class="user-input" name="source" value="<%= card["source"] %>">
 
-        <p>Notes<input type="text" class="user-input" name="notes" value="<%= card["notes"] %>"></p>
+        <p>Works at</p><input type="text" class="user-input" name="workplace" value="<%= card["workplace"] %>">
 
-        <input type="submit" class="btn" value="Save Changes">
-        <input type="reset" class="btn" value="reset">
-        <%# <a href="/delete"><button class="btn">Delete</button></a> %>
-    </div>
+        <p>Skills</p><input type="text" class="user-input" name="skills" value="<%= card["skills"] %>">
+        
+        <p>Key Trait</p><input type="text" class="user-input" name="quality" value="<%= card["quality"] %>">
+        
+        <p>Notes</p>
+        <input type="text" class="user-input notes" name="notes" value="<%= card["notes"] %>">
+        
+    </section>
+    <input type="submit" class="btn" value="Save Changes">
+    <input type="reset" class="btn" value="reset">
+    <%# <a href="/delete"><button class="btn">Delete</button></a> %>
+
 </form>
 
 

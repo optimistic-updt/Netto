@@ -25,3 +25,6 @@ INSERT INTO users (email) VALUES ('t@t.com');
 
 
 INSERT INTO cards (name, image, workplace, job, met, relationship, skills, quality, notes, user_id) VALUES (),
+
+ALTER TABLE 'cards'
+RENAME COLUMN "relationship" TO "source";

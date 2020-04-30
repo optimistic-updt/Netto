@@ -23,7 +23,10 @@ body {
     margin: 0;
     font-family: 'Work Sans', sans-serif;
     background-color: #303F9F;
-    
+}
+
+a {
+    text-decoration: none;
 }
 
 /* ------------------------------ */
@@ -44,6 +47,19 @@ h2{
 h3 {
     font-size: 170%;
 }
+
+.span-1-of-1 {
+    width: 1140px;
+    margin: 0 auto;
+}
+
+@media (min-width: 1500px) {
+    .span-1-of-1 {
+        width: 1500px;
+        margin: 0 auto;
+    } 
+}
+
 
 /* -------- butttons  -------- */
 .btn {
@@ -77,10 +93,8 @@ h3 {
     box-shadow: 10px 10px 15px 1px #434343;
 }
 
-/* ------------------------------ */
-/* ----- FORM STYLING ----------- */
-/* ------------------------------ */
 
+/* ----- FORM STYLING ----------- */
 
 .form-user {
     margin: 10vh auto 0 auto;
@@ -105,7 +119,6 @@ h3 {
     display: block;
     padding: 10px;
     border: none;
-    /* border-radius: 0 0 5px 5px; */
 }
 
 .form-user--input:first-of-type {
@@ -149,43 +162,6 @@ h3 {
 }
 
 
-/* ------------------------------ */
-/* ----- CARD STYLING ----------- */
-/* ------------------------------ */
-
-.card {
-    margin: 20px;
-    background-color: #C5CAE9;
-    border-radius: 30px;
-    display: grid;
-    justify-items: center;
-    box-shadow: 0px 15px 16px 15px #303030;
-    border: 10px solid #000000;
-    padding: 50px;
-}
-
-.card img {
-    border-radius: 30%;
-}
-
-.card p {
-    border: 1px solid black;
-}
-
-
-
-/* ====================== */
-
-.main-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-
-}
-
-.span-1-of-1 {
-    width: 1140px;
-    margin: 0 auto;
-}
 
 /* ------------------------------ */
 /* ----- Landing page ----------- */
@@ -198,6 +174,7 @@ h3 {
     justify-items: center;
     margin-top: 15vh;
     height: 60vh;
+    grid-gap: 50px;
 }
 
 .hero-title {
@@ -253,3 +230,133 @@ h3 {
     margin: 10px;
     padding: 10px;
 }
+
+.add-btn-parent {
+    
+}
+
+.add-btn {
+    height: 300px;
+    width: 300px;
+    font-size: 300%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin: 0 100px 50px 100px
+}
+
+.search--input {
+    margin-right: 50px;
+    border-radius: 20px;
+    flex-grow: 2;
+    max-width: 600px;
+    height: 55px;
+    padding-left: 20px;
+}
+
+.search--btn {
+    flex-grow: 1;
+    background-color: rgba(255, 153, 0, 0.296);
+    color: #FFFFFF;
+    max-width: 350px;
+}
+
+/* ------- Card layout ----------- */
+/* ------------------------------ */
+/* ----- CARD STYLING ----------- */
+/* ------------------------------ */
+
+.card {
+    margin: 20px;
+    background-color: #C5CAE9;
+    border-radius: 30px;
+    display: grid;
+    justify-items: center;
+    box-shadow: 0px 5px 5px 5px #303030;
+    border: 10px solid #000000;
+    padding: 50px;
+}
+
+.card img {
+    border-radius: 30%;
+}
+
+
+/* ====================== */
+
+.main-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.card--a { 
+    display: grid;
+    justify-items: center;
+    text-decoration: none;
+}
+
+.card-multiple:hover {
+    box-shadow: 0px 10px 16px 10px #292929;
+}
+
+h4 {
+    font-size: 130%;
+}
+
+.card--btn {
+    margin: 0 ;
+}
+
+
+/* ----------------- */
+.card-solo {
+    margin: 50px auto 0 auto;
+    width: 50%;
+    /* display: grid; */
+    box-shadow: 10px 10px 15px 1px #000000;
+    /* padding: 50px;  */
+}
+
+.card-solo img {
+    width: 250px;
+}
+
+.card-solo--files {
+    margin-top: 20px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.card-solo--or {
+    margin: 15px;
+}
+
+.image-url-input {
+    height: 30px;
+}
+
+.card-solo--input-section {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    width: 100%;
+    grid-gap: 5px;
+}
+
+
+
+
+.image-placeholder {
+    height: 200px;
+    width: 200px;
+    background-color: rgb(155, 155, 155);
+}
+

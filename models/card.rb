@@ -22,6 +22,7 @@ def search(parameter)
     conn.close
 
     # search_result = run_sql("SELECT * FROM cards WHERE name LIKE '%$1%';", [{ :value => parameter, :type => 0, :format => 0 }])
+
     search_result
 end
 

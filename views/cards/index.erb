@@ -1,23 +1,30 @@
 
-<a href="/card/new"><button class="btn">Add</button></a>
-<a href="#"><button class="btn">View Map</button></a>
+<a href="/card/new" class="add-btn-parent">
+    <button class="btn add-btn">Add</button>
+</a>
 
-<form action="/search" method="get">
-    <input type="search" class="user-input" name="search" id="search">
-    <input type="submit" class="btn" value="Search">
+
+<form action="/search" method="get" class="search-form">
+    <input type="search" class="user-input search--input" name="search" id="search" value="Search...">
+    <input type="submit" class="btn search--btn" value="Search">
 </form>
 
-<div class="main-grid">
-    <% cards.each do |card| %>
-        <a href="/show/<%= card["id"] %>">
-            <div class="card card-multiple">
 
+<div class="main-grid">
+
+    <% cards.each do |card| %>
+    
+        
+            <div class="card card-multiple">
+            <a href="#" class="card--a">
                 <img src="<%= card["image"] %>" alt="<%= card["name"] %>'s profile picture">
 
                 <h4><%= card["name"] %></h4>
 
-                <a href="/card/<%= card["id"] %>/edit"><button class="btn">Update</button></a>
+                <a href="/card/<%= card["id"] %>/edit"><button class="btn card--btn">Update</button></a>
+            </a>
             </div>
-        </a>
+        
     <% end %>
 </div>
+
