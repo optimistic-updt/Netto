@@ -14,7 +14,7 @@
 <header class="navigation">
     <% if session[:user_id] != nil  %>
 
-      <p>logged in as <%= user["email"] %></p>
+      <p class="logged-in-as">logged in as <%= user["email"] %></p>
       <form action="/session" method="post">
         <input type="hidden" name="_method" value="delete">
         <button class="btn">log out</button>

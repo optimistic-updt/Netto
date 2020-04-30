@@ -3,10 +3,10 @@ require 'bcrypt'
 
 
 def run_sql(sql, params)
-    conn = PG.connect(dbname: 'netto')
+    conn = PG.connect(ENV['DATABASE_URL'] || {dbname: 'netto'})
     records = conn.exec_params(sql,params)
     conn.close
-
+ 
     records
 end
 

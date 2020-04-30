@@ -1,6 +1,6 @@
 require 'sinatra'
-require 'sinatra/reloader'
-require 'pry'
+require 'sinatra/reloader' if development?
+require 'pry' if development?
 
 require_relative 'models/user.rb'
 require_relative 'models/card.rb'

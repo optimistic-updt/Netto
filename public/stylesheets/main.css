@@ -238,9 +238,18 @@ h3 {
 
 .navigation {
     background-color: rgba(0, 0, 0, 0.536);
-
+    display: flex;
+    justify-content: flex-end;
 }
 
 .navigation p {
     margin: 0;
+    color: #FF9800;
+    margin-top: 21px;
+    margin-right: 5px;
+}
+
+.navigation button {
+    margin: 10px;
+    padding: 10px;
 }
