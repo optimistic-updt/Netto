@@ -11,7 +11,9 @@
         
         <p class="left-col">Met at</p><p><%= card["met"] %></p>
 
-        <p class="left-col">Knows</p><p><%= get_card_by_id(card["source"])["name"] %></p>
+        <p class="left-col">Knows</p><p><%= card["source"].split(/ |\_|\-/).map(&:capitalize).join(" ") %></p>
+
+        <p class="left-col">Does</p><p><%= card["job"] %></p>
 
         <p class="left-col">Works at</p>
         <p><%= card["workplace"] %></p>
@@ -24,26 +26,33 @@
 
         <p class="left-col">Notes</p>
         <textarea name="notes" id="" cols="30" rows="5"><%= card["notes"] %></textarea>
-        <%# <input type="text" class="user-input notes" name="notes" value=""> %>
     </section>
 
     <a href="/card/<%= card["id"] %>/edit"><button class="btn">Update</button></a>
     <a href="/card/<%= card["id"] %>/delete"><button class="btn">Delete</button></a>
 </div>
 
+
 <div class="main-grid">
-    <% dependants.each do |dep| %>
-    
-        
+
+    <% if card["source"] != "No-one" %>
         <div class="card card-multiple">
-        <a href="/show/<%= dep["id"]%>" class="card--a">
-            <img src="<%= dep["image"] %>" alt="<%= dep["name"] %>'s profile picture">
+            <a href="/show/<%= source_card["id"]%>" class="card--a">
+                <img src="<%= source_card["image"] %>" alt="<%= source_card["name"] %>'s profile picture">
 
-            <h4><%= dep["name"] %></h4>
-
-            <a href="/card/<%= dep["id"] %>/edit"><button class="btn card--btn">Update</button></a>
-        </a>
+                <h4><%= source_card["name"].split(/ |\_|\-/).map(&:capitalize).join(" ") %></h4>
+            </a>
         </div>
-        
+    <% end %>
+
+    <% targets.each do |target| %>
+    
+        <div class="card card-multiple">
+            <a href="/show/<%= target["id"]%>" class="card--a">
+                <img src="<%= target["image"] %>" alt="<%= target["name"] %>'s profile picture">
+
+                <h4><%= target["name"] %></h4>
+            </a>
+        </div>   
     <% end %>
 </div>

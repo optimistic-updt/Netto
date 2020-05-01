@@ -7,7 +7,7 @@ CREATE TABLE cards (
     workplace TEXT,
     job TEXT,
     met TEXT,
-    source TEXT,
+    source INTEGER,
     skills TEXT,
     quality TEXT,
     notes TEXT,
@@ -24,7 +24,11 @@ INSERT INTO users (email, pw_digest) VALUES ('user@netto.com', 'qwe');
 INSERT INTO users (email) VALUES ('t@t.com');
 
 
-INSERT INTO cards (name, image, workplace, job, met, relationship, skills, quality, notes, user_id) VALUES (),
+INSERT INTO cards (name, image, workplace, job, met, source, skills, quality, notes, user_id) VALUES (),
 
 ALTER TABLE 'cards'
 RENAME COLUMN "relationship" TO "source";
+
+create_card('Henry Fee', "", "the sky", "counter", "at the pub", "Kevin Garcia", "knifes", "great guy", "awudhaodawdohao", 3)
+
+INSERT INTO cards (name, image, workplace, job, met, source, skills, quality, notes, user_id) VALUES ('Nil Brown', "", "the sky", "counter", "at the pub", nil, "knifes", "great guy", "awudhaodawdohao", 3);

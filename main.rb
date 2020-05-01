@@ -66,13 +66,27 @@ end
 get '/show/:id' do
   card = get_card_by_id(params[:id])
   user = get_user_by_id(session[:user_id])
-  dependants = get_dependant(params[:id])
+  
+  # the card as a number as source
+    # we want a name
+  if card["source"] == nil
+    card["source"] = "No-one"
+  else
+    knows_card = get_card_by_id(card["source"])
+    card["source"] = knows_card["name"]
+  end  
+  
+  # raise card["source"]
+  # show the targets
+  # find all the cards that have source is this card's id
+  targets = get_targets(params[:id])
   
 
   erb :'/cards/show', locals: {
     card: card,
     user: user,
-    dependants: dependants
+    source_card: knows_card,
+    targets: targets
   }
 end
 
