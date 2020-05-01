@@ -2,7 +2,7 @@
 # The Network App - Pods
 
 **Link to the app ->**<https://pods-network.herokuapp.com/>
-![alt text](https://github.com/cumulusground/netto/public/pods-landing.png "App Landing Page")
+![alt text](https://github.com/CumulusGround/Netto/blob/master/public/pods-landing.png "App Landing Page")
 
 ## A back-end based project
 
@@ -59,4 +59,4 @@ You'll never forget your friend's friend name anymore.
 - How to handle PG "nil" requests.
 - Doing the MVP with truly the less amount of variables possible....
 
-link to the planning folder: 
+link to the planning folder: <https://github.com/CumulusGround/Netto/tree/master/design%20sketch>
