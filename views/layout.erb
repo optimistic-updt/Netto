@@ -19,12 +19,12 @@
 <header class="navigation">
     <% if session[:user_id] != nil  %>
 
-      <a href="/index"><button class="btn home-btn">Home</button></a>
+      <a href="/index"><button class="btn home-btn btn-on-nav">Home</button></a>
       
       <p class="logged-in-as">logged in as <%= user["email"] %></p>
       <form action="/session" method="post">
         <input type="hidden" name="_method" value="delete">
-        <button class="btn">log out</button>
+        <button class="btn btn-on-nav">log out</button>
       </form>  
     <% end %>
 </header>

@@ -12,7 +12,6 @@ def search(parameter)
             OR workplace ILIKE '%#{parameter}%'
             OR job ILIKE '%#{parameter}%'
             OR met ILIKE '%#{parameter}%'
-            OR source ILIKE '%#{parameter}%'
             OR skills ILIKE '%#{parameter}%'
             OR quality ILIKE '%#{parameter}%'
             ORDER BY name
@@ -21,9 +20,7 @@ def search(parameter)
     conn = PG.connect(dbname: 'netto')
     search_result = conn.exec(sql)
     conn.close
-
     # search_result = run_sql("SELECT * FROM cards WHERE name LIKE '%$1%';", [{ :value => parameter, :type => 0, :format => 0 }])
-
     search_result
 end
 
