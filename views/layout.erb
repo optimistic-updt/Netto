@@ -15,17 +15,23 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
 <header class="navigation">
     <% if session[:user_id] != nil  %>
 
-      <a href="/index"><button class="btn home-btn btn-on-nav">Home</button></a>
-      
+      <div class="navigation-left">
+        <a href="/index"><button class="btn home-btn btn-on-nav">Home</button></a>       
+      </div>
+
+    <div class="navigation-right">
       <p class="logged-in-as">logged in as <%= user["email"] %></p>
       <form action="/session" method="post">
         <input type="hidden" name="_method" value="delete">
         <button class="btn btn-on-nav">log out</button>
-      </form>  
+      </form>
+    </div>
+    
     <% end %>
 </header>
 

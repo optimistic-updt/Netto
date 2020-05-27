@@ -1,26 +1,24 @@
-# require 'pg'
+
 def all_cards_for_user(id)
     all_cards = run_sql("SELECT * FROM cards WHERE user_id = $1;",[ id ])
     all_cards
 end
 
-
-# CORRECT THIS ONE HAS THERE WILL BE A BREACH IN YOUR DATABASE
 def search(parameter)
-    sql = "SELECT * FROM cards 
-            WHERE name ILIKE '%#{parameter}%'
-            OR workplace ILIKE '%#{parameter}%'
-            OR job ILIKE '%#{parameter}%'
-            OR met ILIKE '%#{parameter}%'
-            OR skills ILIKE '%#{parameter}%'
-            OR quality ILIKE '%#{parameter}%'
-            ORDER BY name
-            ;"
+    # sql = "SELECT * FROM cards 
+    #         WHERE name ILIKE '%#{parameter}%'
+    #         OR workplace ILIKE '%#{parameter}%'
+    #         OR job ILIKE '%#{parameter}%'
+    #         OR met ILIKE '%#{parameter}%'
+    #         OR skills ILIKE '%#{parameter}%'
+    #         OR quality ILIKE '%#{parameter}%'
+    #         ORDER BY name
+    #         ;"
 
-    conn = PG.connect(dbname: 'netto')
-    search_result = conn.exec(sql)
-    conn.close
-    # search_result = run_sql("SELECT * FROM cards WHERE name LIKE '%$1%';", [{ :value => parameter, :type => 0, :format => 0 }])
+    # conn = PG.connect(dbname: 'netto')
+    # search_result = conn.exec(sql)
+    # conn.close
+    search_result = run_sql("SELECT * FROM cards WHERE name ILIKE $1;", [ %parameter% ])
     search_result
 end
 

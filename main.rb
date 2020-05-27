@@ -76,7 +76,6 @@ get '/show/:id' do
     card["source"] = knows_card["name"]
   end  
   
-  # raise card["source"]
   # show the targets
   # find all the cards that have source is this card's id
   targets = get_targets(params[:id])
