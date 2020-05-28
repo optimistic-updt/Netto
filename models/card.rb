@@ -15,7 +15,7 @@ def search(parameter)
             ORDER BY name
             ;"
 
-    conn = PG.connect(dbname: 'netto')
+    conn = PG.connect(ENV['DATABASE_URL'] || {dbname: 'netto'})
     search_result = conn.exec(sql)
     conn.close
     # search_result = run_sql("SELECT * FROM cards WHERE name ILIKE $1;", [ %parameter% ])
