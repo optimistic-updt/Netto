@@ -25,6 +25,9 @@ end
 
 
 get '/user/login' do
+  # unless coming from home page
+  #   redirect '/'
+  # end 
   erb :'/user/user_login'
 end
 
